@@ -1,0 +1,398 @@
+# Today I Learned
+
+## 파이썬 기초
+
+sys.maxsize = 2**64 -1
+
+0b 2진수 0o 8진수 0x 16진수
+
+```python
+import sys
+abs(a - b) <= sys.float_info.epsilon
+import sys
+abs(a - b) <= sys.float_info.epsilon
+```
+
+문자열은 변경할 수 없다.
+
+```python
+a = 'my string?'
+a[-1] = '!'
+TypeError : 'str' object does not support item assignment
+```
+
+### 컨테이너
+
+1. 시퀸스형
+
+리스트, 튜플, 레인지 : 순서가 있는 데이터
+
+2. 비시퀸스형
+
+세트, 딕셔너리 : 순서가 없는 데이터 (키값으로 접근.)
+
+세트(Set)
+
+```python
+a-b # 차집합
+a|b # 합집합
+a&b # 교집합
+```
+
+딕셔너리
+
+: 딕셔너리는 중복된 키값은 존재x 중복된 value는 가능
+
+## 컨테이너 형변환
+
+딕셔너리를 리스트로 형변환하면 키값만 리스트로 나온다.
+
+```python
+divmod(a,b)
+=> (몫,나머지)
+("a" and "b") in vowels
+-> false 
+("b" and "a") in vowels
+-> True # 왜냐하면 b and a에서 뒤에것이 중요하기 때문
+```
+
+인덱싱 
+
+```python
+[1,2,3][2]
+3
+(1,2,3)[0]
+1
+s = 'abcdefghi'
+print(s[::-1])
+ihgfedcba
+```
+
+연산자 우선순위
+
+1. slicing
+2. indexing
+3. 제곱
+4. 단항(부호)
+5. 산술
+6. 비교
+7. 논리
+
+라이브러리 > 패키지 > 모듈 > 함수
+
+```python
+for idx member in enumerate(members):
+0 영수
+1 강현
+이런식으로 결과나옴
+```
+
+```python
+numbers = [1, 3, 7, 9]
+for i in numbers :
+    if 4 in numbers :
+        print(True)
+else :
+    print(False)
+-> False
+for i in numbers :
+    if 4 in numbers :
+        print(True)
+	else :
+    	print(False)
+-> False
+-> False
+-> False
+-> False
+```
+
+## 함수
+
+***주의\* 단, 기본 인자값(Default Argument Value)을 가지는 인자 다음에 기본 값이 없는 인자를 사용할 수는 없습니다.**
+
+```python
+def func(*args)
+#args는 기본적으로 튜플자료형
+```
+
+1. 기본인자 a,b
+2. 키워드인자 a="ㅁ" . b="ㄴ"
+3. 가변인자 *args , **kwang
+
+### 모듈
+
+```python
+from 패키지 import 모듈
+from 패키지,모듈 import 데이터
+from 모듈 import *
+from 모듈 import 데이터 as 별명
+모듈
+import module
+from module import var, function, Class
+from module import *
+패키지
+from package import module
+from package.module import var, function, Class
+```
+
+### 데이터구조
+
+1. 문자열
+
+find(x) : x의 첫번째 위치를 반환(x없으면 -1반환)
+
+index(x) : x의 첫번째 위치를 반환(x가 없으면 오류발생)
+
+startwith,endwith : 시작과 끝이 뭐로 시작하는지 찾음
+
+replace(a,b,c) : a를 b로 c번 대체
+
+strip()
+
+split()
+
+```python
+a = 'a_b_c'
+a.split("_")
+->['a', 'b', 'c']
+```
+
+join : 'seperator'.join(iterable)
+
+```python
+word = '배고파'
+'  '.join(word)
+'배  고  파'
+words = ['안녕', 'hello']
+" ".join(words)
+안녕 hello'
+```
+
+capitalize() : 앞글자 대문자로 만들어 반환
+
+title() : 각각의 단어 앞글자 대문자로 반환
+
+upper() : 전부다 대문자
+
+dir('string') 하면 함수 다나옴 
+
+
+
+2. 리스트
+
+append(x) : 리스트에 x추가
+
+extend(iterable) : 리스트에 iterable 돌면서 계속 추가
+
+insert(i,x) : 인덱스 i에 x추가
+
+remove(x) : 리스트에서 x제거
+
+pop(x) : 리스트에서 x제거하고 반환
+
+clear(x) : 리스트의 모든항목 제거
+
+index(x) : x값의 인덱스 반환
+
+count(x) : x의 갯수 반환
+
+sort() : 리스트를 오름차순으로 정렬
+
+reverse() : 거꾸로 정렬
+
+3. 튜플
+
+index(x) : x의 인덱스 찾음
+
+count(x) : x의 갯수 찾음
+
+4. 셋(SET)
+
+add(elem) : 셋에 elem추가
+
+update(*others) : 여러 값을 추가 
+
+```python
+a = {'사과', '바나나', '수박'}
+a.update({'토마토'})
+a.update({'포도','레몬'})
+a
+{'레몬', '바나나', '사과', '수박', '토마토', '포도'}
+```
+
+remove(elem) : 원소제거
+
+discard(elem) : 원소를 제거하지만 원소가 존재하지 않아도 에러가 발생하지않는다!
+
+5. 딕셔너리(Dictionary) 
+
+get(key,[default value]) : key를 통해 value를 가져온다.
+
+(key Error뜸)
+
+setdefault : get함수와 비슷하지만 찾으려는 키값이 없으면 만들어서 집어넣는다.(key error 안뜸)
+
+pop(key) : pop!
+
+update([other])
+
+```python
+my_dict = {'apple': '사과', 'banana': '바나나', 'melon': '멜론'}
+d={'mango':'망고', 'watermelon':'수박'}
+my_dict.update(d)
+{'apple': '사과아',
+ 'banana': '바나나',
+ 'melon': '멜론',
+ 'mango': '망고',
+ 'watermelon': '수박'}
+```
+
+### 할당
+
+a=b로 하는것
+
+주소값을 공유
+
+### 얕은 복사
+
+b=a[:]로 하는것 주소값이 달라짐
+
+하지만
+
+```python
+a=[1,2,[1,3]]
+b=a[:]
+a[2]에있는 리스트는 같은 주소값을 공유
+```
+
+이럴때는 b=copy.deepcopy(a)로 완전 복사하고 해결!
+
+## 에러 & 예외처리
+
+### 에러
+
+1. syntax Error
+
+: 문법적인 요소가 잘못된 에러 
+
+2. 예외(Exception) 
+
+: 문법적으로는 옳지만, 실행 시 발생하는 에러
+
+Zerodivision Error : 0으로 나눴을때 발생하는 에러
+
+NameError : 지역 혹은 전역 이름 공간 내에서 유효하지 않는 이름 사용
+
+TypeError : 자료형이 바르지않는 경우 
+
+ValueError : 자료형은 올바르나 값이 적절하지 않는 경우
+
+IndexError : 존재하지 않는 index로 조회할 경우
+
+keyError : 존재하지 않는 Key로 접근한 경우
+
+ModuleNotFoundError : 존재하지않는 Module을 import 한경우
+
+ImportError : 모듈은 찾았으나 클래스/함수를 못가져온 경우
+
+keyboardinterrupt : 사용자가 임의로 실행을 중단한 경우
+
+indentationError : 들여쓰기가 적절하지 않은 걍우
+
+### 예외 처리
+
+1. try & except 
+
+```python
+try :
+    <코드>
+except(try에서 에러가 발생할 경우) :
+    <코드>
+```
+
+finally : 반드시 수행해야하는 문장
+
+raise : 강제로 에러 발생시킴
+
+```python
+raise ValueError('hi')
+-> ValueError: hi
+```
+
+assert : 예외를 발생시키는 다른방법
+
+```python
+assert Boolean expression, error message
+
+assert len([1, 2]) == 1, '길이가 1이 아닙니다.'
+```
+
+내가 만드는 에러문
+
+## OOP
+
+### 객체지향프로그래밍
+
+### 클래스
+
+### 인스턴스
+
+```python
+Class Person:
+	def __init__(self,name,age) :
+        self.name
+        self.age
+person1 = Person("강현",30)
+person1은 인스턴스 Person은 클래스
+```
+
+```python
+class Person:
+    def __init__(self, name):
+        self.name = name
+    
+    def talk(self):
+        print(f'I am {self.name}')
+
+p1=Person('강현')
+p1.talk()
+
+Person.talk(p1) -> 클래스메소드에서 호출
+```
+
+매직메소드
+
+__str__ : 출력시 보여줄 내용
+
+gt : 대소비교시 나오는 매직메소드
+
+eq : 등가비교시 나오는 매직메소드
+
+1. 추상화
+
+: 세부적인 내용은 감추고 필수적인 부분만 표현
+
+2. 상속
+
+부모클래스의 속성이 자식클래스에게 그대로 전해지는것
+
+3. 다형성
+
+동일한 메서드가 클래스에 따라 다르게 행동할 수 있다.
+
+ex)메서드 오버라이딩
+
+4. 캡슐화
+
+객체의 일부 구현애용에 대해 외부로 부터 직접적인 엑세스를 차단
+
+public
+
+protect self._age
+
+private self.__age
+
+getter 변수의 값을 읽는 메서드
+
+setter 변수의 값을 설정하는 메서드
+
