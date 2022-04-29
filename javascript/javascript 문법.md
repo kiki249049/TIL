@@ -15,3 +15,11 @@ true ? 1:2
 ? 앞이 true면 :앞에 출력
 
 false면 뒤에 출력
+
+```javascript
+const name = funtion(para) {
+}
+const doublenum = array.map((num)
+                            return num*2)
+```
+
