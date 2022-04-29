@@ -23,3 +23,9 @@ const doublenum = array.map((num)
                             return num*2)
 ```
 
+```javascript
+const issubmit = users.every((user) => {
+    return user.submitted
+}) 
+```
+
