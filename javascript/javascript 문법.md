@@ -29,3 +29,9 @@ const issubmit = users.every((user) => {
 }) 
 ```
 
+```javascript
+const sleep= user.some((user) => {
+    return user.submitted
+})
+```
+
