@@ -27,7 +27,7 @@ Token Based
 
 https://image.tmdb.org/t/p/w500/AdyJH8kDm8xT8IKTlgpEC15ny4u.jpg
 
-NowPlaying , Search, popular, recommendation
+NowPlaying , Search, popular, recommendation(날씨, 카테고리)
 
 
 
@@ -36,3 +36,15 @@ ReviewSerializer - title, movie_title, created_at, updated_at, content, comments
 
 
 ReviewListSerializer - movie_title, title, review.rank,user_id, created_at, updated_at
+
+localstorage => 토큰있어? 로그인!
+
+![image-20220517093034097](Serializer 복습.assets/image-20220517093034097.png)
+
+장르 - 무드 연결
+
+로그인 버튼 dispatch
+
+token : localStorage.getItem('token') || '' => token 있으면 get 아니면 '' 빈문자열
+
+boolean값을 받아내는 법 : !!state.token
