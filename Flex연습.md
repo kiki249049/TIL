@@ -19,7 +19,7 @@ Flex에서 알아야할 5요소
 
 ![image-20220208030755577](C:\Users\kiki2\AppData\Roaming\Typora\typora-user-images\image-20220208030755577.png)
 
-1) align-content : 여러줄 사이의 간격을 저장.
+1) align-content : 여러줄 사이의 간격을 저장
 
 ![image-20220208030718274](C:\Users\kiki2\AppData\Roaming\Typora\typora-user-images\image-20220208030718274.png)
 
