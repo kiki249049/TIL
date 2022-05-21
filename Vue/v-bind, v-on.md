@@ -8,7 +8,7 @@
 > </div>
 > ```
 >
-> body에 이런 image태그가 있고
+> body에 이런 image태그가 있다.
 >
 > ```vue
 >  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
