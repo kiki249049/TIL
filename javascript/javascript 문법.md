@@ -35,3 +35,6 @@ const sleep= user.some((user) => {
 })
 ```
 
+map every some 
+
+return 필요!
