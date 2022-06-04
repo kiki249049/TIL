@@ -15,6 +15,8 @@ Flex에서 알아야할 5요소
 
 ![image-20220208030805674](C:\Users\kiki2\AppData\Roaming\Typora\typora-user-images\image-20220208030805674.png)
 
+
+
 1) flex flow : flex-direction + flex wrap
 
 ![image-20220208030755577](C:\Users\kiki2\AppData\Roaming\Typora\typora-user-images\image-20220208030755577.png)
