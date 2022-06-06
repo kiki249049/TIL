@@ -6,8 +6,6 @@ target.addEventListener('click',function)
 
 road 인자에 충전기가 있는곳에 1 설치
 
-start = 0
-
 K만큼가서 1이 없으면 뒤로 K만큼까지 뒤로 갔는데 계속 1이 없으면 0출력
 
 1 발견하면 다시 K 만큼가고 똑같은 과정 반복. ans += 1
