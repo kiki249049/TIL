@@ -244,7 +244,7 @@ this.$router.push
 
 $router.params.lottoNums
 
-.env.local => key 숨기는곳
+.env.local => key 숨기는곳!
 
 splice(index,1)
 
