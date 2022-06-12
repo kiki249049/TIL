@@ -47,4 +47,4 @@ localstorage => 토큰있어? 로그인!
 
 token : localStorage.getItem('token') || '' => token 있으면 get 아니면 '' 빈문자열
 
-boolean값을 받아내는 법 : !!state.token
+boolean값을 받아내는 법 : !!state.token => 중요!
