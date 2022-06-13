@@ -36,5 +36,5 @@ git merge 병합할 브랜치이름
 
 * 반면 동일 파일이더라도 서로 다른 부분을 수정했다면 conflict없이 자동으로 merge commit 된다.
 
--> vim(옛날 cmd)에디터가 나옴 당황no
+-> vim(옛날 cmd)에디터가 나옴
 
