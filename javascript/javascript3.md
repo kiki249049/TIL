@@ -14,7 +14,7 @@ for(let value in bestMovie){
 }
 ```
 
-for .. of : 반복가능한 객체를 순회하며 값을 꺼낼때
+for .. of : 반복가능한 객체를 순회하며 값을 꺼낼때!
 
 ```javascript
 const movies = [
