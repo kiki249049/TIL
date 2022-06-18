@@ -78,4 +78,4 @@ return JsonResponse(data, safe=False)
 
 이렇게 값을 뽑아서 list화 해주면 됩니다. ※ .values()를 꼭 해주세요
 
-백엔드 프론트엔드 연동시키는법
+백엔드 프론트엔드 연동시키는법!!
