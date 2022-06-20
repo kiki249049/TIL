@@ -22,7 +22,7 @@ git log --oneline --all --graph
 
 git merge 병합할 브랜치이름
 
-* merge하기 전에 일단 다른 브랜치를 합치려고 하는 메인 브랜치로 switch해야함 A,B와 A가 메인이면 A로 이동해야함.
+* merge하기 전에 일단 다른 브랜치를 합치려고 하는 메인 브랜치로 switch해야함 A,B와 A가 메인이면 A로 이동해야함
 
 ### 1. fast-forward
 
