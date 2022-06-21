@@ -10,7 +10,7 @@ CSR
 
 Client Side Rendering
 
-서버에서 화면을 구성하는SSR 달리 client가 화면을 구성
+서버에서 화면을 구성하는SSR 달리 client가 화면을 구성!
 
 
 
