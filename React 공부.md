@@ -1,40 +1,36 @@
-# React 공부
+# React공부
 
-### index.js => 입구
+JSX는 className으로 class를 지정.
 
-![image-20220616012949899](C:\Users\kiki2\AppData\Roaming\Typora\typora-user-images\image-20220616012949899.png)
+```react
+// 중괄호 문법
+function App () {
+    let post = '강남우동 맛집'
+    return <div>{ post }</div>
+}
+```
 
-### 사용자 정의태그 만들기
+```react
+// style 넣기
+function App () {
+    let post = '강남우동 맛집'
+    return <div style={ { color : 'red', fontSize : '16px' } }>{ post }</div>
+}
+```
 
-사용자 정의 태그 만들때 반드시 처음에 대문자!
+### useState(매우 중요!!)
 
-![image-20220616012831948](C:\Users\kiki2\AppData\Roaming\Typora\typora-user-images\image-20220616012831948.png)
+```react
+// style 넣기
+import { useState } from 'react';
 
-### PROPS
+function App () {
+    let post = '강남우동 맛집';
+    let [글제목,b] = useState('남자 코트 추천')
+    // useState에는 ['남자 코트 추천', 함수]
+    // 글제목에는 남자 코트추천이 b에는 그것을 바꿀 수 있는 함수가 들어가 있다.
+    return <div style={ { color : 'red', fontSize : '16px' } }>{ post }</div>
+}
+```
 
-![image-20220616015021101](C:\Users\kiki2\AppData\Roaming\Typora\typora-user-images\image-20220616015021101.png)
-
-### onChangMode(onclick)
-
-: click하면 실행되는 함수 정의
-
-event.target=> 여기까지는 event를 유발하는 tag
-
-event.target.id=> event를 유발하는 tag의 id
-
-### State
-
-![image-20220617005157194](React 공부.assets/image-20220617005157194.png)
-
-0은 값을 저장
-
-1번은 상태를 변경할때 쓰는것
-
-const a = b.a
-
-const {a} = b;
-
-![image-20220617014712082](React 공부.assets/image-20220617014712082.png)
-
-### CREATE
-
+state쓰는 이유?? 그냥 post를 바꾼다고하면 새로고침을 해야 적용이 되는데 state를 사용하면 새로고침을 안해도 폰app처럼 적용이 된다.
