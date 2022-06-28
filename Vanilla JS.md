@@ -180,3 +180,47 @@ function changeColor(){
 title.addEventListener("click",changeColor)
 ```
 
+### 14. mouseenter, mouseleave
+
+mouseenter = 마우스 들어가면 발생하는 이벤트
+
+mouseleave = 마우스 빠져나가면 발생하는 이벤트
+
+```javascript
+title.addEventListener("mouseenter",function)
+```
+
+### 15. window
+
+```javascript
+function handleWindowResize(){
+  document.body.style.backgroundColor = "tomato";
+}
+title.addEventListener("click",changeColor)
+title.addEventListener("mouseenter",changeEnterText)
+title.addEventListener("mouseleave", changeLeaveText)
+
+window.addEventListener("resize",handleWindowResize)
+console.dir(title);
+```
+
+### 16. Clipboard event
+
+```javascript
+// ctrl+c했을때 발생하는 이벤트
+window.addEventListener('copy',anyFunction)
+```
+
+### 17. Connection event
+
+```javascript
+// wifi가 연결에 따라 발생하는 이벤트
+window.addEventListener("offline",offline);
+window.addEventListener("online",online)
+```
+
+event를 심어주는 과정
+
+1. element를 선택
+2. addEventListener
+3. 반응!! (함수를 넣는다!!)
