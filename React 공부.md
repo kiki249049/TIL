@@ -1,115 +1,295 @@
-# React공부
+1. Vanilla JS
 
-JSX는 className으로 class를 지정.
+   ### 1. const 와 let의 차이
 
-```react
-// 중괄호 문법
-function App () {
-    let post = '강남우동 맛집'
-    return <div>{ post }</div>
-}
-```
+   ```javascript
+   let a = 5;
+   const b = 2;
+   ```
 
-```react
-// style 넣기
-function App () {
-    let post = '강남우동 맛집'
-    return <div style={ { color : 'red', fontSize : '16px' } }>{ post }</div>
-}
-```
+   const는 상수고 값이 바뀔 수 없다. 
 
-### useState(매우 중요!!)
+   let은 나중에 바뀔 수 있는 변수일때만 사용
 
-```react
-// style 넣기
-import { useState } from 'react';
+   ```javascript
+   let a = 5;
+   a = 7
+   console.log(a)
+   => 7
+   ```
 
-function App () {
-    let post = '강남우동 맛집';
-    let [글제목,b] = useState('남자 코트 추천')
-    // useState에는 ['남자 코트 추천', 함수]
-    // 글제목에는 남자 코트추천이 b에는 그것을 바꿀 수 있는 함수가 들어가 있다.
-    return <div style={ { color : 'red', fontSize : '16px' } }>{ post }</div>
-}
-```
+   ```javascript
+   const a = 5;
+   a = 7
+   console.log(a)
+   => error! // const는 바꿀 수 없기 떄문
+   ```
 
-state쓰는 이유?? 그냥 post를 바꾼다고하면 새로고침을 해야 적용이 되는데 state를 사용하면 새로고침을 안해도 폰app처럼 적용이 된다.
+   기본적으로 const를 쓰고 나중에 가변적인 변수에서만 let을 사용한다.
 
-### onClick
+   ### 2. boolean
 
-```react
-// onClick안에는 무조건 함수!
-function likeUp(){
-    내용기입.
-}
+   ```javascript
+   const amIFat = null;
+   console.log(amIFat)
+   // null => 메모리에 만들어졌고 값이 빈칸
+   let something;
+   console.log(something); 
+   // undefined => 메모리에 만들어졌지만 값이 없는것.
+   ```
 
-<div className='list'>
-        <h4 style={ {fontWeight:'bold'} }>{ 글제목[0] } <span onClick={ likeUp } >👍</span> {좋아요} </h4>
-        <p>2월 17일 발행</p>
-      </div>
-```
+   ### 3. array
 
-### useState로 state 변경할떄 유의점
+   ```javascript
+   const nonsense = [1,2,"hello", true]
+   ```
 
-: 기존state === 신규 state의 경우 변경을 해주지 않는다.
+   ### 4. object
 
-```react
-// 바로 바뀌지 않는 경우.
-let [글제목, setTitle] = useState(['남자 코트 추천','강남 우동 맛집','파이썬 독학']);
-<button onClick={ () => { 
-        let copy = 글제목 // copy한것
-        copy[0] = '여자코트 추천'
-        setTitle(copy)}}>글 수정</button>
-// 바로 바뀌는것.
-<button onClick={ () => { 
-        let copy = [...글제목] // copy한것
-        copy[0] = '여자코트 추천'
-        setTitle(copy)}}>글 수정</button>
-```
+   ```javascript
+   const playerName = "nico"
+   const playerPoints = 121212;
+   const playerHandsome = true;
+   const playerFat = "little bit"
+   
+   // 이런식으로 적으면 매우 비효율적으로 데이터를 관리하게 된다.
+   const player = { 
+       name : 'kanghyun', 
+       points : 10, 
+       isHandsome : true, 
+       isFat : false
+   };
+   console.log(player);
+   console.log(player.name);
+   player.name = "nico"
+   // const를 썼는데 name이 바꿔지는 것은 전체를 바꾸는게 아니라 안에 있는 요소를 바꿨기 때문에 가능하다.
+   player.lastName = "potato";
+   // 데이터 추가도 가능!
+   ```
 
-왜 바로 바뀌지 않느냐? 
+   ### 5. function
 
-array object특징때문
+   ```javascript
+   function sayHello(){
+       console.log("Hello!")
+   }
+   const player = {
+       name : "nico",
+       sayHello: function(otherPersonName){
+           console.log(`hello ${otherPersonName}!`)
+       }
+   } 
+   console.log(player.name)
+   player.sayHello("lynn")
+   ```
 
-```react
-// arr에는 [1,2,3]이 저장이 되는게 아니라 [1,2,3]을 가리키는 위치가 저장이 됨.
-let arr = [1,2,3]
-// 바로 바뀌지 않는 경우.
-let [글제목, setTitle] = useState(['남자 코트 추천','강남 우동 맛집','파이썬 독학']);
-<button onClick={ () => { 
-        let copy = 글제목 // copy한것
-        copy[0] = '여자코트 추천'
-        setTitle(copy)}}>글 수정</button>
-// 이런식으로 하게 되면 copy에 내용은 바뀌었지만 화살표는 바뀌지 않아 state는 변경점이 없다고 생각하여 바뀌지않음.
-// console.log(copy === 글제목) 해보면 true가 나온다.
-```
+   ### 6. return
 
-그래서 copy = [...글제목] 하게 되면 화살표도 바꿔줌
+   ```javascript
+   const age = 96;
+   function calculateKrAge(ageOfForienger){
+       return ageOfForeinger + 2;
+   }
+   const krAge = calculateKrAge(age);
+   console.log(krAge)
+   ```
 
-...이 괄호를 벗겨주라는 의미
+   ### 7. Conditional
 
-### component 만들기
+   ```javascript
+   const age = prompt("How are you??"); // prompt는 메시지창을 띄우는 메소드, js를 잠시 멈춘다.
+   console.log(age);
+   parseInt(age);
+   // prompt로 나오는 글자는 기본적으로 string이기 때문에 int로 바꿔주는 메소드인 parseInt로 숫자로 바꿔준다.
+   // 만약 prompt에 숫자가 안들어갔다면 ?? => NaN이 나온다.
+   ```
 
-```react
-function Modal(){
-  return (
-    <div className='modal'>
-        <h4>제목</h4>
-        <p>날짜</p>
-        <p>상세내용</p>
-      </div>
-  )
-}
-```
+   && => and 
 
-따로 function으로 정의해서 원하는 곳에 <Modal>이런식으로 사용
+   || => or
 
-첫번째 알파벳은 무조건 대문자!!
+   ### 8. isNaN => 숫자인지 아닌지 검증하는 함수
 
+   ```javascript
+   const age = parseInt(prompt("How old are you??"));
+   
+   console.log(isNaN(age));
+   if(isNaN(age)){
+       console.log("Please write a number")
+   }else{
+       console.log(age)
+   }
+   ```
 
+   ### 9. document
 
-어떤걸 컴포넌트로 만들면 좋은가?
+   ```javascript
+   document
+   // #document
+   console.dir(document)
+   // document object가 나온다.
+   ```
 
-1. html 반복적으로 축약할때
-2. 큰 페이지들
-3. 자주 변경되는 것들
+   document에 JS가 연결돼있다!! 접근해서 JS로 바꿀 수 있음!
+
+   ### 10. getElementById
+
+   ```javascript
+   const title = document.getElementById("title")
+   // id로 tag요소를 가져오는 방법!
+   ```
+
+   ### 11. console.dir
+
+   ```javascript
+   console.dir(title)
+   // console.dir은 console.log보다 더 자세하게 모든 것을 보여준다.
+   ```
+
+   ### 12. querySelector(매우 중요! 되게 많이씀)
+
+   ```html
+    <div class="hello">
+         <h1 autofocus  id="title">Grab me!</h1>  
+     </div>
+   ```
+
+   ```javascript
+   // div안에 있는 h1 타이틀을 가져오고 싶다면
+   const title = document.querySelector(".hello h1");
+   // querySelector는 .hello처럼 class 표시를 해줘야한다.
+   const title = document.querySelector(".hello h1:first-child")
+   // 첫번째 h1만 가져오고 싶을때 사용
+   ```
+
+   하지만 .hello h1가 여러개 있는 경우에는 가장 첫번째 것만 가져온다.
+
+   다 가져오고 싶으면 querySelectorAll을 사용!
+
+   ### 13. addEventListener
+
+   ```javascript
+   const title = document.querySelector("div.hello:first-child h1")
+   function changeColor(){
+       if title.style.color !== "red"{
+        title.style.color = "red"   
+       }else{
+           title.style.color = "black"
+       }
+   }
+   title.addEventListener("click",changeColor)
+   ```
+
+   ### 14. mouseenter, mouseleave
+
+   mouseenter = 마우스 들어가면 발생하는 이벤트
+
+   mouseleave = 마우스 빠져나가면 발생하는 이벤트
+
+   ```javascript
+   title.addEventListener("mouseenter",function)
+   ```
+
+   ### 15. window
+
+   ```javascript
+   function handleWindowResize(){
+     document.body.style.backgroundColor = "tomato";
+   }
+   title.addEventListener("click",changeColor)
+   title.addEventListener("mouseenter",changeEnterText)
+   title.addEventListener("mouseleave", changeLeaveText)
+   
+   window.addEventListener("resize",handleWindowResize)
+   console.dir(title);
+   ```
+
+   ### 16. Clipboard event
+
+   ```javascript
+   // ctrl+c했을때 발생하는 이벤트
+   window.addEventListener('copy',anyFunction)
+   ```
+
+   ### 17. Connection event
+
+   ```javascript
+   // wifi가 연결에 따라 발생하는 이벤트
+   window.addEventListener("offline",offline);
+   window.addEventListener("online",online)
+   ```
+
+   event를 심어주는 과정
+
+   1. element를 선택
+   2. addEventListener
+   3. 반응!! (함수를 넣는다!!)
+
+   ### 18. CSS와 JS html을 통한 대화
+
+   ```css
+   body {
+     background-color: beige;
+   }
+   
+   h1 {
+     color: cornflowerblue;
+   }
+   
+   .active {
+     color : tomato;
+   }
+   ```
+
+   ```javascript
+   function changeColor(){
+     title.className = "active";
+   }
+   title.addEventListener("click",changeColor)
+   // active는 getter이면서 setter
+   ```
+
+   javascript를 작성할때 변수에 raw value를 넣을것!
+
+   ### 19. javascript로 원하는 class만 없애기
+
+   ```javascript
+   const title = document.querySelector("div.hello:first-child h1");
+   function changeColor(){
+       const clickedClass = "active"
+       if(title.classList.contains(clickedClass)){
+           title.classList.remove(clickedClass)
+       }else{
+           title.className.add(clickedClass)
+       }
+   }
+   ```
+
+   className은 전에 있던 class를 상관안하고 모든걸 바꿔버림 따라서 classList사용
+
+   classList는 element의 classList의 접근을 허용한다는것.
+
+   ### 20. toggle
+
+   ```javascript
+   function changeColor(){
+       title.classList.toggle("active")
+   }
+   // 위의 19번 함수와 같은내용
+   ```
+
+   form은 enter로 입력되는게 디폴트!
+
+   ### 21. submit
+
+   ```javascript
+   const loginForm = document.querySelector("#login-form")
+   
+   function onLogsubmitted(event){
+     event.preventDefault(); // 브라우저의 기본 동작을 막아줌
+     console.log("submit")
+   }
+   
+   loginForm.addEventListener("submit", onLogsubmitted)
+   // Form에 submit을 해주면 안에있는 btn도 같이 click되는 효과가 일어난다!
+   ```
