@@ -369,3 +369,47 @@ round는 반올림해주는 함수!
 Ceil 올림
 
 floor 내림
+
+### 28. image삽입 createElement사용
+
+```javascript
+const bgImg = document.createElement("img")
+document.body.appendChild(bgImg)
+```
+
+### 29. addEventListener "submit"있음!!
+
+form tag에서 엔터로 보내는거 포함!
+
+### 30. todo
+
+```javascript
+const todoForm = document.getElementById("todo-form")
+const todoList = document.getElementById("todo-list")
+const todoInput = todoForm.querySelector("input")
+
+function handleTodoSubmit(event){
+  event.preventDefault()
+  const newTodo = todoInput.value
+  const li = document.createElement("li")
+  li.innerText = newTodo
+  todoList.appendChild(li)
+  todoInput.value = ''
+}
+todoForm.addEventListener("submit", handleTodoSubmit)
+```
+
+### 31. addTodo
+
+```javascript
+function paintTodo(newTodo){
+  const li = document.createElement("li")
+  const span = document.createElement("span");
+  li.appendChild(span)
+  span.innerText = newTodo
+  todoList.appendChild(li)
+}
+```
+
+
+
