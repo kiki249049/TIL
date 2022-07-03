@@ -411,5 +411,147 @@ function paintTodo(newTodo){
 }
 ```
 
+### 32. Delete Todo
 
+```javascript
+function deleteTodo(event){
+  const li = event.target.parentElement
+  li.remove();
+}
+```
+
+
+
+### 33. JSON.stringfy
+
+```javascript
+localstorage.setItem("todos",JSON.stringify(todos))
+// 이렇게하면 todos리스트가 문자열로 저장!
+```
+
+
+
+### 34.JSON.parse
+
+```javascript
+const saveToDos = localStorage.getItem(TODOS_KEY)
+console.log(saveToDos) // string
+if(saveToDos !== null){
+  const parsedTodos = JSON.parse(saveToDos)
+  console.log(parsedTodos) // array
+}
+```
+
+
+
+### 35. forEach
+
+```javascript
+function sayHello(item){
+    console.log("this is the turn of", item)
+}
+
+if (saveTodos !== null){
+    const parsedTodos = JSON.parse(saveTodos)
+    console.log(parsedTodos)
+    parsedTodos.forEach(sayHello)
+}
+// forEach는 굳이 들어갈 el를 명시해주지 않더라도 자동으로 sayHello에 원소로 들어가게 된다.
+```
+
+
+
+### 36. Date.now()
+
+```javascript
+//id값을 부여할때 쓰이는 함수
+Date.now()
+```
+
+
+
+### 37. filter
+
+```javascript
+// 무언가를 삭제할때 유용하게 쓰이는 함수
+function sexyFilter(newTodoObject){
+    return newTodoObject.id !== li.id
+}
+[1.2.3.4].filter(sexyFilter)
+// true값을 반환하는 값만 남기고 다 없앰
+```
+
+```javascript
+function saveTodos(){
+  localStorage.setItem("todos", JSON.stringify(todos))
+}
+
+function deleteTodo(event){
+  const li = event.target.parentElement
+  // li.id는 str이니 parseInt로 숫자로 바꿔주기!
+  todos = todos.filter(todo => todo.id !== parseInt(li.id) )
+  console.log(todos) 
+  saveTodos()
+  li.remove();
+}
+
+```
+
+
+
+### 38. for in, for of
+
+```javascript
+const todos = [2,5,4,4,233,2,21]
+for(key in todos){
+    console.log(key)
+}
+// 0,1,2,3,4,5,6
+for(value of todos){
+    console.log(value)
+}
+// 2,5,4,4,233,2,21
+```
+
+
+
+### 39. geolocation
+
+```javascript
+// geolocation.getCurrenrPosition함수는 2개의 인자가 필요한데
+// 첫번째는 문제가 없을때 실행되는 함수, 두번째는 에러가 났을때 실행되는 함수
+
+function getSuccess(position){
+  const lat = position.coords.latitude
+  const long = position.coords.longitude
+  console.log("U live in", lat,long)
+}
+
+function getFail(){
+  alert("Can't find You!!")
+}
+
+navigator.geolocation.getCurrentPosition(getSuccess, getFail)
+```
+
+
+
+### 40. fetch 매우중요!!
+
+```javascript
+function getSuccess(position){
+  const lat = position.coords.latitude
+  const long = position.coords.longitude
+  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${API_KEY}&units=metric`
+  // fetch로 불러오고 계속 then으로 정보를 가져오는 식!
+  fetch(url)
+  .then(response => response.json())
+  .then(data => {
+    const weather = document.querySelector("#weather span:first-child")
+    const city = document.querySelector("#weather span:last-child")
+    weather.innerText = data.weather[0].main
+    city.innerText = data.name
+  })
+}
+```
 
