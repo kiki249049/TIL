@@ -252,7 +252,7 @@
    <ul>
      {todos.map((todo,index)=> <li key={index}>{todo}</li>)}
    </ul>
-   // 이런식으로 하게 되면 ul안에 todos안에있는 요소로 li가 자동으로 넣어지게 된다.key도 필수!
+   // 이런식으로 하게 되면 ul안에 todos안에있는 요소로 li가 자동으로 넣어지게 된다.key도 필수
    ```
    
    
