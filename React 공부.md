@@ -332,3 +332,9 @@ console.log(Button); // undefined
 // 중괄호는 리턴이 안됨!
 ```
 
+### useParams
+
+```react
+
+```
+
