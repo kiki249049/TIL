@@ -311,7 +311,7 @@ const getMovies = async() => {
 
 보시다시피 fetch후 then연발과 매우 비슷하다
 
-비동기식으로 then대신에 await를 쓰는 느낌
+비동기식으로 then대신에 await를 쓰는 느낌!
 
 ### javascript 화살표 함수 주의사항
 
