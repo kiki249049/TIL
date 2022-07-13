@@ -319,7 +319,7 @@ const getMovies = async() => {
 const Button = () => (
 <button>Hello world</button>
                      )
-// 소괄호면 return이 된다
+// 소괄호면 return이 된다!
 
 ```
 
