@@ -338,3 +338,31 @@ console.log(Button); // undefined
 
 ```
 
+### useContext => vue에서의 vueX같은 역할
+
+/context/ThemeContext.js
+
+```react
+import { createContext } from "react";
+
+export const ThemeContext = createContext(null);
+```
+
+
+
+
+
+: 전역적인 상태관리 
+
+```react
+function App() {
+  const [isDark, setIsDark] = useState(false)
+  return (
+    <ThemeContext.Provider value={{isDark,setIsDark}}>
+      <Page isDark={isDark} setIsDark={setIsDark} />
+    </ThemeContext.Provider>
+    )
+}
+// app에서 정보 필요한 하위 컴포넌트들에게 value에 들어가 있는 정보제공
+```
+
