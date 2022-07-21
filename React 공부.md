@@ -352,7 +352,7 @@ export const ThemeContext = createContext(null);
 
 
 
-: 전역적인 상태관리!
+: 전역적인 상태관리
 
 ```react
 function App() {
