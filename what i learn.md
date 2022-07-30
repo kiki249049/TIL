@@ -32,6 +32,6 @@ export const textState = () => {
 ### Recoil-persist
 
 ```react
-추후 공부
+
 ```
 
