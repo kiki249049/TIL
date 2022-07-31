@@ -255,3 +255,5 @@ plugins: [
 ​	createPersistedState
 
 ]
+
+Vue
