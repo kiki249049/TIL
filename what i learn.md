@@ -32,6 +32,6 @@ export const textState = () => {
 ### Recoil-persist
 
 ```react
-
+npm install persist-recoil
 ```
 
