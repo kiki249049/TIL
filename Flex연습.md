@@ -31,4 +31,4 @@ flexbox froggy 마지막문제
 
 ![image-20220208031755591](C:\Users\kiki2\AppData\Roaming\Typora\typora-user-images\image-20220208031755591.png)
 
-개구리 flex연습!
+개구리 flex연습
