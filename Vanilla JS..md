@@ -536,7 +536,7 @@ navigator.geolocation.getCurrentPosition(getSuccess, getFail)
 
 
 
-### 40. fetch 매우중요!!
+### 40. fetch 매우중요!
 
 ```javascript
 function getSuccess(position){
