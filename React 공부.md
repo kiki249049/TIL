@@ -366,3 +366,7 @@ function App() {
 // app에서 정보 필요한 하위 컴포넌트들에게 value에 들어가 있는 정보제공
 ```
 
+
+
+### RecoilState
+
