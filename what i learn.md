@@ -35,3 +35,4 @@ export const textState = () => {
 npm install persist-recoil
 ```
 
+=> Recoil의 atom상태를 영구적으로 localstorage에 저장하는것.
