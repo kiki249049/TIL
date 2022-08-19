@@ -26,6 +26,6 @@ useEffect(() => {
     }
 },[]);
 
-// cleanUp은 return 뒤에나오는 함수이고 useEffect의 뒷정리함수이다.
+// cleanUp은 return 뒤에나오는 함수이고 useEffect의 뒷정리함수이다
 ```
 
