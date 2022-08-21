@@ -30,7 +30,7 @@ Vue.js
 
 데이터가 변경되면 Dom이 바뀌기 때문에
 
-Data로직을 작성하고 DOM을 작성한다.
+Data로직을 작성하고 DOM을 작성한다
 
 ```js
 var app = new Vue({
