@@ -1,4 +1,4 @@
-### KNN 알고리즘
+## KNN 알고리즘
 
 ![image-20220825170041311](C:\Users\kiki2\AppData\Roaming\Typora\typora-user-images\image-20220825170041311.png)
 
@@ -14,6 +14,8 @@ R은 고객들이 영화에 메긴 평점들
 S = R*R^t으로 유사도
 
 ![image-20220825171848538](C:\Users\kiki2\AppData\Roaming\Typora\typora-user-images\image-20220825171848538.png)
+
+### 1. numpy sort
 
 UbyU = R*R^T 해서 대각선을 0으로 만들어준 matrix(자기 자신은 이웃이 아니기 때문)
 
@@ -50,14 +52,16 @@ def predict(R,K) :
 
 ![image-20220825212433003](C:\Users\kiki2\AppData\Roaming\Typora\typora-user-images\image-20220825212433003.png)
 
+### 2. 직접 predict구하는 과정
+
 ```python
-def compute_sim(R) :
+def compute_sim(R) : # 유사도 계산
     num_users = R.shape[0]
     UbyU = (R*R.transpose()).toarray()
-    UbyU[range(num_users), range(num_users)]
+    UbyU[range(num_users), range(num_users)] = 0
     return UbyU
 
-def predict(R,K) :
+def predict(R,K) : # 직접 predict행렬 산출
     num_users = R.shape[0]
     num_items = R.shape[1]
     
@@ -73,4 +77,6 @@ def predict(R,K) :
     
     return R_predicted
 ```
+
+![image-20220825214935582](C:\Users\kiki2\AppData\Roaming\Typora\typora-user-images\image-20220825214935582.png)
 
