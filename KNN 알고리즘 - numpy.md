@@ -80,3 +80,8 @@ def predict(R,K) : # 직접 predict행렬 산출
 
 ![image-20220825214935582](C:\Users\kiki2\AppData\Roaming\Typora\typora-user-images\image-20220825214935582.png)
 
+
+
+## Matrix Factorization
+
+go
