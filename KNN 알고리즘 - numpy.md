@@ -84,4 +84,3 @@ def predict(R,K) : # 직접 predict행렬 산출
 
 ## Matrix Factorization
 
-go
