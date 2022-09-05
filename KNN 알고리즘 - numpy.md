@@ -1,19 +1,19 @@
 ## KNN 알고리즘
 
-![image-20220825170041311](C:\Users\kiki2\AppData\Roaming\Typora\typora-user-images\image-20220825170041311.png)
+![image-20220825170041311](https://user-images.githubusercontent.com/97595340/188319859-7ffcc135-d355-44a2-a031-a80c9c4c5930.png)
 
 * 분모 = K명의 사람과 유사도 시그마
 * 분자 = K명의 사람과 유사도 * 비슷한 사람이 준 평점을 곱한것의 시그마
 
 고객 u가 평점을 주지 않았던 영화들 중에서 평점이 가장 높은 영화를 추천
 
-![image-20220825170535837](C:\Users\kiki2\AppData\Roaming\Typora\typora-user-images\image-20220825170535837.png)
+![image-20220825170535837](https://user-images.githubusercontent.com/97595340/188319869-97a101c4-e5b2-4bad-90ff-b0faa926a5c7.png)
 
 R은 고객들이 영화에 메긴 평점들
 
 S = R*R^t으로 유사도
 
-![image-20220825171848538](C:\Users\kiki2\AppData\Roaming\Typora\typora-user-images\image-20220825171848538.png)
+![image-20220825171848538](https://user-images.githubusercontent.com/97595340/188319882-d440b046-0e4a-40ba-be63-891de2955b7a.png)
 
 ### 1. numpy sort
 
@@ -38,7 +38,7 @@ np.argsort(a axis=1)
 array([[1,0,2,3],[0,3,2,1],[2,0,3,1]])
 ```
 
-![image-20220825211459605](C:\Users\kiki2\AppData\Roaming\Typora\typora-user-images\image-20220825211459605.png)
+![image-20220825211459605](https://user-images.githubusercontent.com/97595340/188319896-313a9373-8c36-4560-8f9d-12a5360b1d33.png)
 
 ```python
 import numpy as np
@@ -50,9 +50,9 @@ def predict(R,K) :
     topk = sim.argsort(axis=1)[:,-K:] # 각 행마다 맨 뒤의 K개 element가져옴 
 ```
 
-![image-20220825212433003](C:\Users\kiki2\AppData\Roaming\Typora\typora-user-images\image-20220825212433003.png)
+![image-20220825212433003](https://user-images.githubusercontent.com/97595340/188319912-a58aed03-f1e1-4bba-9bc1-03e871165d55.png)
 
-### 2. 직접 predict구하는 과정
+### 2. 직접 predict구하는 과정.
 
 ```python
 def compute_sim(R) : # 유사도 계산
@@ -78,9 +78,9 @@ def predict(R,K) : # 직접 predict행렬 산출
     return R_predicted
 ```
 
-![image-20220825214935582](C:\Users\kiki2\AppData\Roaming\Typora\typora-user-images\image-20220825214935582.png)
+![image-20220825214935582](https://user-images.githubusercontent.com/97595340/188319932-4771b8cf-792a-4794-b6b7-0aadd0ad09a5.png)
 
 
 
-## Matrix Factorization
+
 
