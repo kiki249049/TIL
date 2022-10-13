@@ -57,3 +57,15 @@ Lombok Annotation을 쓰면
 ![image-20221013000022124](Spring 공부.assets/image-20221013000022124.png) 
 
 이렇게 생성자와 toString메소드를 생략할 수 있다.
+
+### 데이터 조회
+
+![image-20221013194652776](Spring 공부.assets/image-20221013194652776.png)
+
+### Repository에서 ArrayList로 받게하기
+
+![image-20221013201338788](Spring 공부.assets/image-20221013201338788.png)
+
+![image-20221013201351406](Spring 공부.assets/image-20221013201351406.png)
+
+그 후 Controller에서 List로 받는다.
