@@ -69,3 +69,64 @@ Lombok Annotation을 쓰면
 ![image-20221013201351406](Spring 공부.assets/image-20221013201351406.png)
 
 그 후 Controller에서 List로 받는다.
+
+# 스프링부트 흐름
+
+1. 컨트롤러 생성(RestController Annotation)
+
+2. 서비스 인터페이스 생성(필요 x)
+
+3. 서비스 impl 클래스 생성 후 인터페이스 implements로 상속(Service Annotation)
+
+4. 서비스 Entity생성 (2,3번에서 쓰일 것.)
+
+   ```java
+   @Entity
+   @Getter
+   @Setter
+   @NoArgsConstructor
+   @DynamicInsert
+   @DynamicUpdate
+   @Table
+   // Entity Annotation리스트!
+   
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer idx;
+   // pk 설정 어노테이션
+   
+    @ManyToOne
+    @JoinColumn(name="user_idx")
+    private UserEntity userIdx;
+   // fk 설정 어노테이션
+   ```
+
+5. Entity에 접근할 Repository생성
+
+```java
+import org.springframework.data.jpa.repository.JpaRepository;
+
+// Entity가 들어가야함
+public interface ArticleRepository extends JpaRepository<ArticleEntity, Integer> {
+    
+}
+```
+
+6. 컨트롤러 api 생성
+
+```java
+kakaoCallBack(HttpServletRequest request) // HttpServletRequest request 토큰 받는 부분.
+```
+
+6. Dto 생성
+7. 서비스 쓰게 만들기 in Controller
+
+```java
+    private FarmmunityService farmmunityService;
+
+    @Autowired
+    FarmmunityController(FarmmunityService farmmunityService){
+        this.farmmunityService = farmmunityService;
+    }
+```
+
